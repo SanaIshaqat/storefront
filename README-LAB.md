@@ -14,6 +14,6 @@ Today, we begin the first of a 4-Phase build of the storefront application, writ
 
 [Deployment Link](https://sanaishaqat.github.io/storefront)
 
-[PR Link]()
+[PR Link](https://github.com/SanaIshaqat/storefront/pull/1)
 
-[Branch: redux]()
+[Branch: redux](https://github.com/SanaIshaqat/storefront/tree/redux)
