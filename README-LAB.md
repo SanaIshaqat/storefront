@@ -17,3 +17,6 @@ Today, we begin the first of a 4-Phase build of the storefront application, writ
 [PR Link](https://github.com/SanaIshaqat/storefront/pull/1)
 
 [Branch: redux](https://github.com/SanaIshaqat/storefront/tree/redux)
+
+### UML-LAB36
+![](401-UML36.jpg)
