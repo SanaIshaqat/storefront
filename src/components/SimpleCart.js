@@ -16,8 +16,7 @@ export default function SimpleCart() {
         {state.map((product) => (
           <>
             <li id='li'>
-              {product} <Button  id='Button'  variant="contained" style={{backgroundColor: "cadetblue", color:"white"}} onClick={() => deleteHandler(product)}>Delete</Button>
-              
+              {product} <Button  id='Button'  variant="contained" style={{backgroundColor: "cadetblue", color:"white"}} onClick={() => deleteHandler(product)}>Delete</Button> 
             </li>
           </>
         ))}
