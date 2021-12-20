@@ -13,7 +13,7 @@ function ButtonAppBar() {
 
   return (
     <div id='footer'>
-      <AppBar style={{backgroundColor: "cadetblue", fontFamily:"sans-serif"}} id='nav-bar' position='static'>
+      <AppBar style={{backgroundColor: "cadetblue"}} id='nav-bar' position='static'>
           <h4>All Rights reserved &copy; Sana Ishaqat 2021</h4>
       </AppBar>
     </div>

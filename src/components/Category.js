@@ -9,16 +9,16 @@ function Category(props) {
   }
   return (
     <>
-      <h2 id='Category' style={{fontFamily:"sans-serif"}}><b>Select Desired Category:</b></h2>
+      <h3 id='Category'>Select Desired Category:</h3>
       {props.categories.map((cat) => (
         <>
-          <Button id='Button'  variant="contained"style={{backgroundColor: "cadetblue", color:"white"}} onClick={() => onClickHandler(cat.normalizedName)}>
+          <Button id='Button'  variant="contained" style={{backgroundColor: "cadetblue", color:"white"}} onClick={() => onClickHandler(cat.normalizedName)}>
             {cat.normalizedName}
           </Button>
         </>
       ))}
 
-      {props.activeCategory.normalizedName && <h2>Active Category : {props.activeCategory.normalizedName}</h2>}
+      {props.activeCategory.normalizedName && <h3>Active Category : {props.activeCategory.normalizedName}</h3>}
     
       {props.activeCategory.normalizedName && <h4 id='desc'> {props.activeCategory.description}</h4>}
     </>
