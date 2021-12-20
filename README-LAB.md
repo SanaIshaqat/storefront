@@ -18,6 +18,9 @@ Today, we begin the first of a 4-Phase build of the storefront application, writ
 
 [Branch: redux](https://github.com/SanaIshaqat/storefront/tree/redux)
 
+### UML
+![](401-UML36.jpg)
+
 ## Phase 2 Requirements-LAB37
 In phase 2, we will be adding the “Add to Cart” feature to our application, which will allow our users to not only browse items in the store, but also select them and have them persist in their “shopping cart” for later purchase.
 
@@ -35,3 +38,6 @@ The user stories from Phase 1 remain unchanged. For this phase, we are now addin
 [PR Link](https://github.com/SanaIshaqat/storefront/pull/3)
 
 [Branch: redux](https://github.com/SanaIshaqat/storefront/tree/combined-reducers)
+
+
+
