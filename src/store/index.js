@@ -1,9 +1,14 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { catProdReducer } from '../reducer/category-reducer';
-import { productReducer } from '../reducer/product-reducer';
-import { cartReducer } from '../reducer/cart-reducer';
+import thunk from 'redux-thunk';
 
-const reducers = combineReducers({ cat: catProdReducer, prod: productReducer, cart: cartReducer });
+import category from '../reducer/category-reducer';
+import cart from '../reducer/cart-reducer';
 
-export const store = createStore(reducers, composeWithDevTools());
+let reducers = combineReducers({ category, cart });
+
+const store = () => {
+  return createStore(reducers, composeWithDevTools(applyMiddleware(thunk)));
+}
+
+export default store();

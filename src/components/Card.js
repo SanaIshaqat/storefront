@@ -2,13 +2,14 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../reducer/actions';
-import CardActions from '@material-ui/core/CardActions';
+import { updateInStockHandler } from '../reducer/actions';
 
 const useStyles = makeStyles({
   root: {
@@ -24,8 +25,12 @@ export default function MediaCard(props) {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
   function addToCartHandler(productName) {
-    if (!state.cart.cartProducts.includes(productName)) {
-      dispatch(addToCart(productName));
+    let prodObj;
+    state.prod.products.map((p) => (p.name === productName ? (prodObj = p) : false));
+    let inStock = prodObj.inStock;
+    if (!state.cart.cartProducts.includes(productName) && inStock > 0) {
+      prodObj.inStock = prodObj.inStock - 1;
+      dispatch(updateInStockHandler(prodObj, 'ADDCART'));
     }
   }
   return (
@@ -37,21 +42,22 @@ export default function MediaCard(props) {
             {props.product.name}
           </Typography>
           <Typography variant='body2' color='textSecondary' component='p'>
-            {props.product.description}
+            {props.product.description?.slice(0, 150)}
           </Typography>
           <Typography gutterBottom variant='h6' component='h6'>
-            Price : {props.product.price}
+            Price : {props.product.price} $
           </Typography>
           <Typography gutterBottom variant='h6' component='h6'>
-            Availability : {props.product.inventoryCount} pieces
+            Availability : {props.product.inStock}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button  style={{backgroundColor: "cadetblue", color:"white"}} id='addButton'  variant="contained"color="primary" onClick={() => addToCartHandler(props.product.name)} size='small' color='primary'>
+        <Button style={{backgroundColor: "cadetblue", color:"white"}} onClick={() => addToCartHandler(props.product.name)} size='small'>
           Add To Cart
         </Button>
       </CardActions>
     </Card>
   );
 }
+

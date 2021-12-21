@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import App from './App';
-
-import { store } from './store';
+import  store  from './store';
 import { Provider } from 'react-redux';
 
 function Main() {
@@ -16,3 +14,5 @@ function Main() {
 )};
 
 ReactDOM.render(<Main/>, document.getElementById("root"));
+
+

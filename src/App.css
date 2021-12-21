@@ -115,4 +115,24 @@
     color: rgb(241, 239, 239);
     font-weight: 400;
   }
+
+
+  #simple-cart {
+    position: sticky;
+    float: right;
+  }
+
+  .cart {
+    position: absolute;
+    top: 25px;
+    right: 14px;
+
+  }
   
+  #card {
+   margin-top: 40px;
+   margin-left:40px;
+  display: inline-block;
+  width:400px;
+  
+  }

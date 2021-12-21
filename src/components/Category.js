@@ -1,31 +1,34 @@
 import React from 'react';
+
+import Button from '@material-ui/core/Button';
+import '../App.css';
+
 import { connect } from 'react-redux';
-import { selectCategory } from '../reducer/actions';
-import { Button } from '@material-ui/core';
+import * as actions from '../reducer/actions'
 
-function Category(props) {
-  function onClickHandler(categoryName) {
-    props.selectCategory(categoryName);
-  }
-  return (
-    <>
-      <h3 id='Category'>Select Desired Category:</h3>
-      {props.categories.map((cat) => (
-        <>
-          <Button id='Button'  variant="contained" style={{backgroundColor: "cadetblue", color:"white"}} onClick={() => onClickHandler(cat.normalizedName)}>
-            {cat.normalizedName}
-          </Button>
-        </>
-      ))}
+const Categories = props => {
+  return(
+  
+    <section className="breadcrumbs">
+      <p className='Select' >Select Category:</p>
+      <>
+      <Button id="Button1" style={{backgroundColor: "cadetblue", color:"white"}} size="large"  variant="contained"color="primary" onClick={() => props.get()}>ALL</Button>    
+      <Button id="Button2" style={{backgroundColor: "cadetblue", color:"white"}} size="large"  variant="contained"color="primary" onClick={() => props.food()}>Fruits</Button>
+      <Button id="Button3" style={{backgroundColor: "cadetblue", color:"white"}} size="large"  variant="contained"color="primary" onClick={() => props.flowers()}>Flowers</Button>
+      </>
+   
+      </section>
+  )
+}  
 
-      {props.activeCategory.normalizedName && <h3>Active Category : {props.activeCategory.normalizedName}</h3>}
-    
-      {props.activeCategory.normalizedName && <h4 id='desc'> {props.activeCategory.description}</h4>}
-    </>
-  );
-}
-const mapStateToProps = (state) => {
-  return state.cat;
-};
-const mapDispatchToProps = { selectCategory };
-export default connect(mapStateToProps, mapDispatchToProps)(Category);
+const mapStateToProps = state => ({
+  state
+})
+
+const mapDispatchToProps = (dispatch, getState) => ({
+  get: () => dispatch(actions.getRemoteData()),
+  food: () => dispatch(actions.getFood()),
+  flowers: () => dispatch(actions.getflowers())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Categories);
