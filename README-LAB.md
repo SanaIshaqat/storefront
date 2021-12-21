@@ -45,10 +45,10 @@ The user stories from Phases 1 and 2 remain unchanged. For this phase, we are no
 - As a user, I want to interact with live inventory so that I have confidence that the displayed products are in stock
 - As a user, I want to know to that when I add an item to my cart, that it is removed from inventory so that no other users can purchase it.
 
-### Links-LAB37
+### Links-LAB38
 
-[Deployment Link](https://sanaishaqat.github.io/storefront)
+[Deployment Link]()
 
-[PR Link](https://github.com/SanaIshaqat/storefront/pull/3)
+[PR Link](https://github.com/SanaIshaqat/storefront/pull/4)
 
-[Branch: redux](https://github.com/SanaIshaqat/storefront/tree/combined-reducers)
+[Branch: thunk](https://github.com/SanaIshaqat/storefront/tree/thunk)
