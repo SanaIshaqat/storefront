@@ -47,8 +47,10 @@ The user stories from Phases 1 and 2 remain unchanged. For this phase, we are no
 
 ### Links-LAB38
 
-[Deployment Link]()
+[Deployment Link](https://sanaishaqat.github.io/storefront)
 
 [PR Link](https://github.com/SanaIshaqat/storefront/pull/4)
 
 [Branch: thunk](https://github.com/SanaIshaqat/storefront/tree/thunk)
+
+![](Lab38Results.PNG)
